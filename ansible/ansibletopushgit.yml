@@ -1,0 +1,14 @@
+---
+- name: Clone Git repository
+  hosts: host
+  tasks:
+    - name: Ensure git is installed
+      package:
+        name: git
+        state: present
+
+    - name: Clone the repository
+      git:
+        repo: 'https://github.com/Ganesh16-dev/Devops_training.git'
+        dest: /path/to/destination
+        version: main  # Specify the branch you want to clone
